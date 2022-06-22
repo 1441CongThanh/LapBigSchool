@@ -70,7 +70,7 @@ namespace LapBigSchool.Controllers
         }
         [Authorize]
         public ActionResult Mine()
-        {
+        {   
             var userId = User.Identity.GetUserId();
             var courses = _dbContext.Courses
                 .Where(c => c.LecturerId == userId && c.DateTime > DateTime.Now)
